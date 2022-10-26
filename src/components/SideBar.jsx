@@ -4,13 +4,12 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { tokens } from '../themes'
-import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonOutline, CalendarToday, HelpOutlined, BarChartOutlined, PieChartOutline, TimelineOutlined, MenuOutlined, MapOutlined } from '@mui/icons-material'
+import { MenuOutlined } from '@mui/icons-material/'
 import profilePicture from '../assets/user.png'
-
+import {menuItems} from '../data/mockData'
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
-
   return (
     <MenuItem active={selected === title} style={{ color: colors.gray[100] }}
       onClick={() => setSelected(title)}
@@ -28,6 +27,8 @@ const SideBar = () => {
   const colors = tokens(theme.palette.mode)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [selected, setSelected] = useState('Dashboard')
+  
+  
   
   return (
     <Box
@@ -104,13 +105,17 @@ const SideBar = () => {
               </Box>
             )}
           <Box paddingLeft={isCollapsed ? undefined : '10%'}>
-            <Item
-              title='Dashboard'
-              to='/'
-              icon={<HomeOutlined />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            {
+              menuItems?.map((item) => (
+                <Item
+                title={item.title}  
+                to={item.to}
+                icon={<item.icon/>}
+                selected={selected}
+                setSelected={setSelected}
+              />
+              ))
+              }
           </Box>
         </Menu>
     </ProSidebar>

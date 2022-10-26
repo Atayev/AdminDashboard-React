@@ -1,3 +1,5 @@
+import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonOutline,HelpOutlined, BarChartOutlined, PieChartOutline, TimelineOutlined, MapOutlined, CalendarTodayOutlined } from '@mui/icons-material/'
+import { tokens } from '../themes'
 
 export const mockDataTeam = [
   {
@@ -1280,3 +1282,61 @@ export const mockGeographyData = [
     value: 171135,
   },
 ];
+
+export const menuItems = [
+    {
+      "title":"Dashboard",
+      "to":"/",
+      "icon":HomeOutlined
+   },
+   {
+       "title":"Manage Team",
+       "to":"/team",
+       "icon":PeopleOutline
+   },
+   {
+       "title":"Contacts information",
+       "to":"/contacts",
+       "icon":ContactsOutlined
+   },
+   {
+       "title":"Invoices Balances",
+       "to":"/invoices",
+       "icon":ReceiptOutlined
+   },
+   {
+       "title":"Profile Form",
+       "to":"/form",
+       "icon":PersonOutline
+   },
+   {
+       "title":"Calendar",
+       "to":"/calendar",
+       "icon":CalendarTodayOutlined
+   },
+   {
+       "title":"FAQ page",
+       "to":"/faq",
+       "icon":HelpOutlined
+   },
+   {
+       "title":"Bar Chart",
+       "to":"/bar",
+       "icon":BarChartOutlined
+   },
+   {
+       "title":"Pie Chart",
+       "to":"/pie",
+       "icon":PieChartOutline
+   },
+   {
+       "title":"Line Chart",
+       "to":"/line",
+       "icon":TimelineOutlined
+   },
+   {
+       "title":"Geography Chart",
+       "to":"/geo",
+       "icon":MapOutlined
+   }
+]
