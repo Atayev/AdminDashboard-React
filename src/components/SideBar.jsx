@@ -47,17 +47,19 @@ const SideBar = () => {
         },
         "& .pro-menu-item.active": {
           color:'#6870fa !important'
-        }
+        },
+        
       }}
     >
-      <ProSidebar collapsed={isCollapsed}>
+      <div className="sidebar">
+        <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape='square'>
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlined /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.gray[100],
+              color: colors.gray[100],  
             }}
           >
              {!isCollapsed && (
@@ -95,7 +97,7 @@ const SideBar = () => {
                     color={colors.gray[100]}
                     fontWeight='bold'
                     sx={{ mt: '10px' } }
-                      > Ibrahim Atayev
+                      > Admin Adminovic
                     </Typography>
                   <Typography
                   variant='h5'
@@ -119,6 +121,8 @@ const SideBar = () => {
           </Box>
         </Menu>
     </ProSidebar>
+    </div>
+      
     </Box>
   )
 }
